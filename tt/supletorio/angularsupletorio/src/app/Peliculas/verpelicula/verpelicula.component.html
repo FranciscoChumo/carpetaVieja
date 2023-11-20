@@ -1,0 +1,17 @@
+<div class="mt-2 col-md-3 mx-auto">
+    <input type="search" [(ngModel)]="searchTerm">
+    <button class=" btn btn-sm btn-outline-danger mb-1 mx-2 ">Buscar</button>
+
+</div>
+<div class="row ">
+    <div *ngFor="let item of videos | filter:searchTerm" class="col-md-3 p-3 ">
+        <div class="card " style="width: 18rem; ">
+            <iframe width="286" height="215" [src]="getVideoIframe(item.url_video)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body ">
+                <h5 class="card-title ">Nombre de la pelicula: {{item.nombreP}}</h5>
+                <h5 class="card-title ">Genero: {{item.tipoP}}</h5>
+                <img src="item.imagenP" alt="" class="h-0" style="width: 40%; height: 20%;">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <form [formGroup]="peliculaForm" (ngSubmit)="registroPelicula(peliculaForm.value)">
+            <div>
+                <br>
+                <label for="">Nombre de la pelicula</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Nombre de la pelicula" formControlName="nombreP">
+            </div>
+            <div>
+                <br>
+                <label for="">Url del video</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Url del video" formControlName="url_video">
+            </div>
+            <div>
+                <br>
+                <label for="">Genero</label>
+                <br>
+                <input type="text" class="fadeIn second mt-3" placeholder="Genero" formControlName="tipoP">
+            </div>
+            <div>
+                <br>
+                <label for="">Imagen</label>
+                <br>
+                <input type="file" class="fadeIn second mt-3" (change)="onFileSelected($event)" placeholder="Imagen" formControlName="imagenP">
+            </div>
+            <div>
+                <input type="submit" class="fadeIn fourth mt-3" value="crear Pelicula">
+            </div>
+        </form>

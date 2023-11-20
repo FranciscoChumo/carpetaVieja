@@ -1,0 +1,17 @@
+<button [routerLink]="['/crear']"  class="btn btn-outline-primary"> ir a crear videos</button>
+
+<div class="w-50 mx-auto">
+  <input [(ngModel)]="buscar"  type="text" placeholder="buscar por nombre del producto" class="form-control">
+</div>
+<div class="row mt-5" *ngIf="producto">
+  <div class="col-md-3" *ngFor="let video of producto |search:buscar">
+    <div class="card" style="width: 18rem;">
+      <iframe width="200" height="205" [src]="getVideoIframe(video.url)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="card-body">
+        <h5 class="card-title">nombre: {{producto.nombre}} </h5>
+        <p class="card-text">precio: {{producto.precio}}  </p>
+      </div>
+    </div>
+  </div>
+
+</div>

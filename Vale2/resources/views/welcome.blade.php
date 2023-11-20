@@ -1,0 +1,4 @@
+
+@section('estilo')
+  @livewireStyles
+@endsection

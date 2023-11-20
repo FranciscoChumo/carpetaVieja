@@ -1,0 +1,16 @@
+<button class="btn btn-primary"> ir a crear </button>
+<!-- para crear la clase solo escribimos row y enter y se pone -->
+<div class="row mt-5">
+   <div class="col-md-2" *ngFor="let video of videos">
+    <!-- dentro de esta clase ponemos la card ded boostraps -->
+    <div class="card" style="width: 18rem;">
+        <h2>aki va el video {{ video.url }}</h2>
+        <div class="card-body">
+          <h5 class="card-title">nombre del canal : {{ video.nombre_canal }}</h5>
+          <p class="card-text">Numero de suguidores : {{ video.numero_seguidores }}</p>
+          <a href="#" class="btn btn-primary">Editar</a>
+        </div>
+      </div>
+   </div>
+   
+</div>

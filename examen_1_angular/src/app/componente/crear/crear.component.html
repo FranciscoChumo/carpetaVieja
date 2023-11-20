@@ -1,0 +1,27 @@
+<!-- para centrar utilizamos  la clase row -->
+<div class="row">
+    <!-- de esta parte se puede manipular el ancho y alto con boostraps -->
+    <div class="col-md-6 mx-auto">
+        <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Nombre del canal</label>
+              <input [(ngModel)]="nombre_canal" type="text" class="form-control" id="email" 
+              aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="seguidores" class="form-label">Numero de seguidores del canal</label>
+                <input [(ngModel)]="numero_seguidores" type="text" class="form-control" id="seguidores" 
+                aria-describedby="emailHelp">
+              </div>
+             <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Url del video</label>
+                <!-- pasamos un modulo en app.module.ts para que no nos salaga error  -->
+                <input [(ngModel)]="url" type="text" class="form-control" id="exampleInputEmail1"
+                 aria-describedby="emailHelp">
+              </div>
+            <button type="button" class="btn btn-primary" (click)="crear()">Crear</button>
+            <!-- con el (click) = crear podemos poner un alerta para cuando el boton sea precionado va estar en .crear.component ts -->
+          </form>
+    </div>
+
+</div>

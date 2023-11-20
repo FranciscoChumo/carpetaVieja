@@ -1,0 +1,18 @@
+<button [routerLink]="['/crear']"  class="btn btn-outline-primary"> ir a crear videos</button>
+
+<div class="w-50 mx-auto">
+  <input [(ngModel)]="buscar"  type="text" placeholder="buscar por nombre de canal" class="form-control">
+</div>
+<div class="row mt-5" *ngIf="videos">
+  <div class="col-md-3" *ngFor="let video of videos|search:buscar">
+    <div class="card" style="width: 18rem;">
+      <iframe width="200" height="205" [src]="getVideoIframe(video.url)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="card-body">
+        <h5 class="card-title">nombre del canal: {{video.nombre_canal}} </h5>
+        <p class="card-text">numero de seguidores: {{video.numero_seguidores}}  </p>
+        <a [routerLink]="['/edit/'+video.id]" routerLinkActive="router-link-active"  class="btn btn-primary">Editar</a>
+      </div>
+    </div>
+  </div>
+
+</div>

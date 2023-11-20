@@ -1,0 +1,66 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api de personas",
+        "description": "listado de la api persona",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000"
+        }
+    ],
+    "paths": {
+        "/api/auth/persona": {
+            "get": {
+                "tags": [
+                    "rol"
+                ],
+                "summary": "Muestra de todos los datos personas",
+                "operationId": "1f828be0d1faf1d681aa9d3900261aae",
+                "responses": {
+                    "200": {
+                        "description": "ejecucion perfecta",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "nombres": {
+                                                        "type": "string",
+                                                        "example": "rafael"
+                                                    },
+                                                    "cedula": {
+                                                        "type": "string",
+                                                        "example": "111111111"
+                                                    },
+                                                    "direccion": {
+                                                        "type": "string",
+                                                        "example": "Bolivar"
+                                                    },
+                                                    "fecha_nacimiento": {
+                                                        "type": "string",
+                                                        "example": "2023-02-10"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
